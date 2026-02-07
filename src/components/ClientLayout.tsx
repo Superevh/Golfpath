@@ -8,7 +8,7 @@ import { ReactNode } from "react";
 export default function ClientLayout({ children }: { children: ReactNode }) {
   return (
     <AppProvider>
-      <div className="flex min-h-screen flex-col">
+      <div className="flex min-h-screen flex-col bg-[#faf9f6]">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
