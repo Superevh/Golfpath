@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #faf9f6;
+  --foreground: #1a1a1a;
+  --forest-green: #013220;
+  --gold: #D4AF37;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  ::selection {
+    background-color: #D4AF37;
+    color: #013220;
+  }
+}
+
+@layer components {
+  .magazine-card {
+    @apply relative overflow-hidden rounded-lg border border-gold-200 bg-white shadow-lg transition-all duration-300;
+  }
+  .magazine-card:hover {
+    @apply shadow-xl -translate-y-1 border-gold-400;
+  }
+
+  .gold-gradient {
+    background: linear-gradient(135deg, #D4AF37 0%, #f5e6a3 50%, #D4AF37 100%);
+  }
+
+  .forest-gradient {
+    background: linear-gradient(135deg, #013220 0%, #024a30 50%, #013220 100%);
+  }
+
+  .badge-3d {
+    background: linear-gradient(145deg, #D4AF37, #c09b2d);
+    box-shadow:
+      0 4px 6px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+    transform: perspective(500px) rotateX(5deg);
+  }
+
+  .timeline-line {
+    @apply absolute left-1/2 -translate-x-1/2 w-0.5 bg-gradient-to-b from-gold-400 via-forest-500 to-gold-400;
+  }
+
+  .premium-border {
+    border-image: linear-gradient(135deg, #D4AF37, #013220, #D4AF37) 1;
+  }
+}
